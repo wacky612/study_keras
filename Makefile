@@ -10,3 +10,6 @@ prepare: .venv
 
 python:
 	python
+
+mnist:
+	python mnist.py
