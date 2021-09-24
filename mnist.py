@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from tensorflow.keras import models
 from tensorflow.keras import layers
 from tensorflow.keras.utils    import to_categorical

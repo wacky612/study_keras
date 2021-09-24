@@ -1,15 +1,7 @@
-export PATH := .venv/bin:$(PATH)
-
-.PHONY: prepare python
+.PHONY: prepare
 
 prepare: .venv
 
 .venv:
 	python -m venv .venv
 	pip install tensorflow keras
-
-python:
-	python
-
-mnist:
-	python mnist.py
