@@ -2,9 +2,9 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-from keras import models
-from keras import layers
-from keras.datasets import imdb
+from tensorflow.keras import models
+from tensorflow.keras import layers
+from tensorflow.keras.datasets import imdb
 
 def vectorize_sequences(sequences, dimension=10000):
     results = np.zeros((len(sequences), dimension))
@@ -40,16 +40,16 @@ history = model.fit(partial_x_train, partial_y_train, epochs=20, batch_size=512,
 
 history_dict = history.history
 
-loss_values = history_dict['loss']
-val_loss_values = history_dict['val_loss']
+loss = history_dict['loss']
+val_loss = history_dict['val_loss']
 acc = history_dict['accuracy']
 val_acc = history_dict['val_accuracy']
 
-epochs = range(1, len(loss_values) + 1)
+epochs = range(1, len(loss) + 1)
 
 fig = plt.figure()
-plt.plot(epochs, loss_values    , 'bo', label='Training loss')
-plt.plot(epochs, val_loss_values, 'b' , label='Validation loss')
+plt.plot(epochs, loss    , 'bo', label='Training loss')
+plt.plot(epochs, val_loss, 'b' , label='Validation loss')
 plt.title('Training and validation loss')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
